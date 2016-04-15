@@ -1,0 +1,11 @@
+<ion-view view-title="Ligas" ng-controller="LeaguesCtrl as vm">
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="vm.refreshData(true)"></ion-refresher>
+        <div class="list">
+            <a class="item item-icon-right" ng-repeat="league in vm.leagues" ng-click="vm.showLeagueTable(league.id, league.currentMatchday, league.numberOfMatchdays)">
+            	{{league.caption}}
+            	<i class="icon ion-chevron-right icon-accessory"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

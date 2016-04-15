@@ -1,0 +1,43 @@
+<ion-view view-title="{{vm.name}}" ng-controller="TeamDetailCtrl as vm">
+    <ion-content>
+        <ion-card>
+            <ion-item class="item item-thumbnail-left item-icon-right">
+                <img src="{{vm.crestUrl}}">
+                <h2>{{vm.name}}</h2>
+                <p>{{vm.code}} - {{vm.shortName}}</p>
+                <p>Elenco: {{vm.squadMarketValue}}</p>
+            </ion-item>
+        </ion-card>
+        <div class="list">
+            <div class="row item">
+                <div class="col-33">
+                    <h4>Nome</h4>
+                </div>
+                <div class="col-33">
+                    <h4>Posição</h4>
+                </div>
+                <div class="col-10">
+                    <h4>Nº</h4>
+                </div>
+                <div class="col-20">
+                    <h4>Mercado</h4>
+                </div>
+            </div>
+            <a ng-repeat="player in vm.players">
+                <div class="row item">
+                    <div class="col-33">
+                        <h4>{{player.name}}</h4>
+                    </div>
+                    <div class="col-33">
+                        <h4>{{player.position}}</h4>
+                    </div>
+                    <div class="col-10">
+                        <h4>{{player.jerseyNumber}}</h4>
+                    </div>
+                    <div class="col-20">
+                        <h4>{{player.marketValue}}</h4>
+                    </div>
+                </div>
+            </a>
+    </ion-content>
+</ion-view>

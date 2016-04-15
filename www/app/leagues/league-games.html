@@ -1,0 +1,26 @@
+<ion-view view-title="Jogos" ng-controller="LeagueGamesCtrl as vm">
+    <ion-content>
+        <div class="button-bar">
+            <button class="button icon-left ion-chevron-left button-clear button-dark" ng-click="vm.getPrevious()"></button>
+            <h4 class="title">Rodada {{vm.currentMatchday}}</h4>
+            <button class="button icon-right ion-chevron-right button-clear button-dark" ng-click="vm.getNext()"></button>
+        </div>
+        <div class="list">
+            <a ng-repeat="item in vm.games">
+                <div class="row item">
+                    <div class="col-33">
+                        <h3>{{item.date | date:'dd/MM/yyyy'}}</h3>
+                        <h3>{{item.date | date:'HH:mm'}}</h3>
+                    </div>
+                    <div class="col-67">
+                        <h3> 
+                        {{item.TeamHomeCode}}<img src="{{item.TeamHomeCrestUrl}}" class="teamImageGames">
+                        {{item.result.goalsHomeTeam}} X {{item.result.goalsAwayTeam}}
+                        <img src="{{item.TeamAwayCrestUrl}}" class="teamImageGames">{{item.TeamAwayCode}}
+                        </h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

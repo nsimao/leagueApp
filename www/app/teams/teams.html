@@ -1,0 +1,13 @@
+<ion-view view-title="Times" ng-controller="TeamsCtrl as vm">
+    <ion-content>
+        <!-- <ion-refresher pulling-text="Pull to refresh..." on-refresh="vm.refreshData(true)"></ion-refresher> -->
+        <div class="list">
+            <a href="#/app/teams/{{vm.extractTeamId(item)}}" class="item item-thumbnail-left item-icon-right" ng-repeat="item in vm.teams">
+                <img src="{{item.crestUrl}}">
+                <h2>{{item.name}} </h2>
+                <p>Elenco: {{item.squadMarketValue}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </a>  
+        </div>
+    </ion-content>
+</ion-view>
